@@ -35,7 +35,13 @@ module.exports = {
                     ],
                     plugins: [
                         "@babel/plugin-proposal-class-properties",
-                        "@babel/plugin-transform-spread"
+                        "@babel/plugin-transform-spread",
+                        "@babel/plugin-transform-modules-commonjs",
+                        ["@babel/plugin-transform-runtime",
+                            {
+                                "regenerator": true
+                            }
+                        ]
                     ]
                 },
             },
