@@ -1,9 +1,9 @@
-// src/asyncActionAdapter/asyncActionAdapter.ts
+// src/actionAdapter/actionAdapter.ts
 
 import {ActionFunc, AdapterCallback, Handler, ReduxActionMap} from "./interface";
 import {Dispatch} from "redux";
 
-export const asyncActionAdapter = (actionFunc: ActionFunc, reduxActionMap: ReduxActionMap, callback? : AdapterCallback) => (eventArgs: object) => {
+export const actionAdapter = (actionFunc: ActionFunc, reduxActionMap: ReduxActionMap, callback? : AdapterCallback) => (eventArgs: object) => {
     return (dispatch: Dispatch, getState) => {
         const currentState = getState();
         const handler = getHandler(dispatch, reduxActionMap);

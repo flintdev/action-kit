@@ -1,4 +1,4 @@
-// src/asyncActionAdapter/interface.ts
+// src/actionAdapter/interface.ts
 
 export type ActionFunc = (eventArgs: any, state: any, handler: Handler) => Promise<any>
 

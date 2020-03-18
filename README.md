@@ -34,9 +34,9 @@ interface Handler {
 
 ```javascript
 // import action kit
-import {asyncActionAdapter} from '@flintdev/action-kit';
+import {actionAdapter} from '@flintdev/action-kit';
 // import action function
 import {action as getCompleteExpense} from './getCompleteExpenses';
 
-export const asyncAction = asyncActionAdapter(getCompleteExpense);
+export const asyncAction = actionAdapter(getCompleteExpense);
 ```

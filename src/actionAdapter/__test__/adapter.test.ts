@@ -1,7 +1,7 @@
-// src/asyncActionAdapter/__test__/adapter.test.ts
+// src/actionAdapter/__test__/adapter.test.ts
 
 import {Handler} from "../interface";
-import {asyncActionAdapter} from "../asyncActionAdapter";
+import {actionAdapter} from "../actionAdapter";
 
 
 test('test action', (done) => {
@@ -10,7 +10,7 @@ test('test action', (done) => {
         console.log('state', state);
         console.log('handler', handler);
     }
-    const asyncAction = asyncActionAdapter(actionFunc, {}, {
+    const asyncAction = actionAdapter(actionFunc, {}, {
         success: () => {
             done();
         },
