@@ -10,7 +10,7 @@ export async function action(eventArgs, state, handler) {
     await sleep(2000);
     value = 'Complete!';
     setState('TEXT_VALUE_CHANGE', {value});
-    await sleep(100);
+    await sleep(1000);
     value = '';
     setState('TEXT_VALUE_CHANGE', {value});
 }
