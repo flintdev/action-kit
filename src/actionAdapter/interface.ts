@@ -4,6 +4,7 @@ export type ActionFunc = (eventArgs: any, state: any, handler: Handler) => Promi
 
 export interface Handler {
     setState: (stateUpdaterName: string, args: object) => void
+    getState: () => any;
 }
 
 export interface ReduxActionMap {
