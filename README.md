@@ -40,3 +40,33 @@ import {action as getCompleteExpense} from './getCompleteExpenses';
 
 export const asyncAction = actionAdapter(getCompleteExpense);
 ```
+
+## Functions
+
+### **State management**
+
+| Function | Library | Description |
+|---|---|---|---|
+| `setState` | `handler` | set global state in action function|
+| `getState` | `handler` | get state object dynamically in real-time |
+
+#### Interface/Type:
+
+* setState
+```typescript
+type SetState = (stateUpdaterName: string, parameters: object) => void
+```
+* getState
+```typescript
+type GetState = () => any
+```
+
+### **CRUD data objects**
+
+| Function | Library | Description |
+|---|---|---|---|
+| `getObjectList` | `handler.data` | |
+| `getObject` | `handler.data` | 
+| `createObject` | `handler.data` | |
+| `deleteObject` | `handler.data` | |
+| `updateObject` | `handler.data` | |
