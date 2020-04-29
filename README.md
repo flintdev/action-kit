@@ -43,7 +43,7 @@ export const asyncAction = actionAdapter(getCompleteExpense);
 
 ## Functions
 
-### **State management**
+### **1. State management**
 
 | Function | Library | Description |
 |---|---|---|
@@ -61,12 +61,22 @@ type SetState = (stateUpdaterName: string, parameters: object) => void
 type GetState = () => any
 ```
 
-### **CRUD data objects**
+### **2. CRUD data objects**
 
 | Function | Library | Description |
 |---|---|---|
-| `getObjectList` | `handler.data` | |
-| `getObject` | `handler.data` | |
-| `createObject` | `handler.data` | |
-| `deleteObject` | `handler.data` | |
-| `updateObject` | `handler.data` | |
+| `getObjectList` | `handler.data` | get object list of assigned model |
+| `getObject` | `handler.data` | get object spec of assigned model and object name|
+| `createObject` | `handler.data` | create object of assigned model with corrected data schema|
+| `deleteObject` | `handler.data` | delete object of assigned model |
+| `updateObject` | `handler.data` | update partial spec of assigned object by providing patch payload |
+
+### **3. User/Account management**
+
+| Function | Library | Description |
+|---|---|---|
+| `login` | `handler.user` | login with user's credentials and return token with expiration date|
+| `logout` | `handler.user` | logout current user session and remove token locally |
+| `register` | `handler.user` | for new user to create account via this function |
+| `isLoggedIn` | `handler.user` | check if user is logged in with valid token/session. Usually invoked when page loadded. | 
+
