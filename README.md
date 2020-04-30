@@ -52,13 +52,13 @@ export const asyncAction = actionAdapter(getCompleteExpense);
 
 #### Interface/Type:
 
-* setState
+* `setState`
 ```typescript
-type SetState = (stateUpdaterName: string, parameters: object) => void
+type SetStateFunc = (stateUpdaterName: string, parameters: object) => void
 ```
-* getState
+* `getState`
 ```typescript
-type GetState = () => any
+type GetStateFunc = () => any
 ```
 
 ### **2. CRUD data objects**
@@ -70,6 +70,29 @@ type GetState = () => any
 | `createObject` | `handler.data` | create object of assigned model with corrected data schema|
 | `deleteObject` | `handler.data` | delete object of assigned model |
 | `updateObject` | `handler.data` | update partial spec of assigned object by providing patch payload |
+
+#### Interface/Type:
+
+* `getObjectList`
+```typescript
+type GetObjectListFunc = (modelName: string, filter?: string) => Promise<any[]>
+```
+* `getObject`
+```typescript
+type GetObjectFunc = (modelName: string, objectName: string) => Promise<any>
+```
+* `createObject`
+```typescript
+type CreateObjectFunc = (modelName: string, objectName: string, spec: any) => Promise<void>
+```
+* `deleteObject`
+```typescript
+type DeleteObjectFunc = (modelName: string, objectName: string) => Promise<void>
+```
+* `updateObject`
+```typescript
+type UpdateObjectFunc = (modelName: string, objectName: string, payload: any) => Promise<void>
+```
 
 ### **3. User/Account management**
 
