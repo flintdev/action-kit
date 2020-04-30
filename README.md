@@ -13,20 +13,9 @@ npm install @flintdev/action-kit --save
 
 ```javascript
 export async function action(eventArgs, state, handler) {
-  const {setState, getDataObjects} = handler;
-  const expenses = await getDataObjects({
-    model: 'expense',
-    filter: 'status=complete' 
-  });
+  const {setState} = handler;
+  const expenses = await handler.data.getObjectList('expense', 'status=complete');
   setState('SET_COMPLETE_EXPENSES', {expenses});
-}
-```
-
-### Handler interface
-
-```typescript
-interface Handler {
-    setState: (stateUpdaterName: string, object) => void
 }
 ```
 
@@ -75,8 +64,10 @@ type GetStateFunc = () => any
 
 * `getObjectList`
 ```typescript
-type GetObjectListFunc = (modelName: string, filter?: string) => Promise<any[]>
+type GetObjectListFunc = (modelName: string, selector?: string) => Promise<any[]>
 ```
+> selector string uses the same format with k8s label-selector. 
+> please refer to this [link](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors) for more details. 
 * `getObject`
 ```typescript
 type GetObjectFunc = (modelName: string, objectName: string) => Promise<any>
@@ -103,3 +94,15 @@ type UpdateObjectFunc = (modelName: string, objectName: string, payload: any) =>
 | `register` | `handler.user` | for new user to create account via this function |
 | `isLoggedIn` | `handler.user` | check if user is logged in with valid token/session. Usually invoked when page loadded. | 
 
+* `login`
+```typescript
+```
+* `logout`
+```typescript
+```
+* `register`
+```typescript
+```
+* `isLoggedIn`
+```typescript
+```
