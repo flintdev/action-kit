@@ -96,13 +96,17 @@ type UpdateObjectFunc = (modelName: string, objectName: string, payload: any) =>
 
 * `login`
 ```typescript
+type LoginFunc = (credentials: object) => Promise<void>
 ```
 * `logout`
 ```typescript
+type LogoutFunc = () => Promise<void>
 ```
 * `register`
 ```typescript
+type RegisterFunc = (args: any) => Promise<void>
 ```
 * `isLoggedIn`
 ```typescript
+type IsLoggedInFunc = () => Promise<boolean>
 ```
